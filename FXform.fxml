@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="vboxid" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#closeButtonEvent" text="Close" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progbar" layoutX="60.0" layoutY="338.0" prefHeight="18.0" prefWidth="478.0" progress="0.0" />
+            <Button layoutX="550.0" layoutY="302.0" mnemonicParsing="false" onAction="#dirButtonAction" prefHeight="25.0" prefWidth="76.0" text="Choose" />
+            <Text layoutX="27.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL:" />
+            <TextField fx:id="urlbar" layoutX="60.0" layoutY="270.0" onAction="#urlInsertAction" prefHeight="25.0" prefWidth="478.0" promptText="Insert your URL here" />
+            <Text layoutX="28.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Directory:" />
+            <Button fx:id="downloadbutton" layoutX="550.0" layoutY="270.0" mnemonicParsing="false" onAction="#downloadButtonAction" prefHeight="25.0" prefWidth="76.0" text="Download" />
+            <TextField fx:id="dirpath" disable="true" editable="false" layoutX="81.0" layoutY="302.0" prefHeight="25.0" prefWidth="457.0" promptText="Choose your directory" />
+            <Text layoutX="27.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File:" />
+            <TextField fx:id="filenamebar" editable="false" layoutX="60.0" layoutY="245.0" prefHeight="25.0" prefWidth="478.0" />
+            <Text fx:id="size_detail" layoutX="550.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 MB" />
+            <ProgressIndicator fx:id="t1_pgb" layoutX="81.0" layoutY="27.0" progress="0.0" />
+            <Text layoutX="30.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 1" />
+            <Text layoutX="30.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 2" />
+            <ProgressIndicator fx:id="t2_pgb" layoutX="81.0" layoutY="97.0" progress="0.0" />
+            <ProgressIndicator fx:id="t3_pgb" layoutX="81.0" layoutY="171.0" progress="0.0" />
+            <Text layoutX="30.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 3" />
+            <ProgressIndicator fx:id="t4_pgb" layoutX="245.0" layoutY="26.0" progress="0.0" />
+            <ProgressIndicator fx:id="t5_pgb" layoutX="245.0" layoutY="96.0" progress="0.0" />
+            <ProgressIndicator fx:id="t6_pgb" layoutX="245.0" layoutY="171.0" progress="0.0" />
+            <ProgressIndicator fx:id="t7_pgb" layoutX="415.0" layoutY="26.0" progress="0.0" />
+            <ProgressIndicator fx:id="t8_pgb" layoutX="415.0" layoutY="96.0" progress="0.0" />
+            <ProgressIndicator fx:id="t9_pgb" layoutX="415.0" layoutY="168.0" progress="0.0" />
+            <ProgressIndicator fx:id="t10_pgb" layoutX="563.0" layoutY="26.0" progress="0.0" />
+            <Text layoutX="191.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 4" />
+            <Text layoutX="191.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 5" />
+            <Text layoutX="191.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 6" />
+            <Text layoutX="364.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 7" />
+            <Text layoutX="364.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 8" />
+            <Text layoutX="364.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 9" />
+            <Text layoutX="506.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thread 10" />
+            <Text fx:id="status_total" layoutX="29.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" />
+            <Text fill="#8d8383" layoutX="542.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":Merge file Status" />
+            <ImageView fitHeight="83.0" fitWidth="111.0" layoutX="495.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cat.gif" />
+               </image>
+            </ImageView>
+            <Text fx:id="thread_time" layoutX="467.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total time:" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
